@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:text_field_screens/input_screen.dart';
 
 class InfoScreen extends StatefulWidget {
   const InfoScreen({super.key});
@@ -144,17 +145,20 @@ class _InfoScreenState extends State<InfoScreen> {
                     style: const ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(Colors.grey)),
                     onPressed: () {
-                      print(nameController.text);
-                      print(phoneController.text);
-                      print(emailController.text);
-                      print(addressController.text);
                       checkFunctions();
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => Input_screen())));
                     },
-                    child: Text("Add now",
-                        style: TextStyle(
-                            fontSize: 19,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white))),
+                    child: const Padding(
+                      padding: EdgeInsets.all(15),
+                      child: Text("Add now",
+                          style: TextStyle(
+                              fontSize: 19,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white)),
+                    )),
               )
             ]),
       ),

@@ -23,33 +23,32 @@ class _Input_screenState extends State<Input_screen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(children: [
-        TextField(
-          controller: textEditingController,
-          style: TextStyle(fontSize: 20),
-          maxLines: 1,
-          maxLength: 1,
-          focusNode: textFocusNode,
-          onSubmitted: (value) {
-            collegeFocusNode.requestFocus();
-          },
-        ),
-        TextField(
-          controller: collegeTextEditingController,
-          focusNode: collegeFocusNode,
-          style: TextStyle(fontSize: 20),
-          onSubmitted: (value) {
-            checkFunctions();
-          },
-        ),
-        GestureDetector(
-            onTap: () {
-              print(textEditingController.text);
-              checkFunctions();
-            },
-            child: Text("Get value"))
-      ]),
+    return const Scaffold(
+      body: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.thumb_up,
+                  size: 100,
+                  shadows: [
+                    Shadow(
+                        color: Colors.grey, blurRadius: 5, offset: Offset(2, 5))
+                  ],
+                ),
+                Text(
+                  "Nice",
+                  style: TextStyle(fontSize: 50, shadows: [
+                    Shadow(
+                        color: Colors.grey, blurRadius: 5, offset: Offset(2, 5))
+                  ]),
+                )
+              ],
+            )
+          ]),
     );
   }
 }
