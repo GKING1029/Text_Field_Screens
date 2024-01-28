@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:text_field_screens/input_screen.dart';
 
@@ -29,6 +30,9 @@ class _InfoScreenState extends State<InfoScreen> {
       Fluttertoast.showToast(msg: "Enter valid Email");
     } else if (addressController.text.isEmpty) {
       Fluttertoast.showToast(msg: "Enter valid address");
+    } else {
+      Navigator.push(context,
+          MaterialPageRoute(builder: ((context) => const Input_screen())));
     }
   }
 
@@ -79,7 +83,10 @@ class _InfoScreenState extends State<InfoScreen> {
               const Text("Phone no.",
                   style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold)),
               TextField(
-                keyboardType: TextInputType.phone,
+                keyboardType: TextInputType.number,
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly
+                ],
                 controller: phoneController,
                 decoration: const InputDecoration(
                     counterText: "",
@@ -118,7 +125,6 @@ class _InfoScreenState extends State<InfoScreen> {
                 maxLength: 50,
                 focusNode: emailFocusnode,
                 onSubmitted: (value) {
-                  checkFunctions();
                   addressFocusnode.requestFocus();
                 },
               ),
@@ -143,13 +149,14 @@ class _InfoScreenState extends State<InfoScreen> {
               Center(
                 child: ElevatedButton(
                     style: const ButtonStyle(
+                        shadowColor: MaterialStatePropertyAll(Colors.grey),
                         backgroundColor: MaterialStatePropertyAll(Colors.grey)),
                     onPressed: () {
                       checkFunctions();
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: ((context) => Input_screen())));
+                              builder: ((context) => const Input_screen())));
                     },
                     child: const Padding(
                       padding: EdgeInsets.all(15),
