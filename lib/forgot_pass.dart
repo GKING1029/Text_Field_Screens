@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:text_field_screens/otp_screen.dart';
 
 class ForgotPassScreen extends StatefulWidget {
   const ForgotPassScreen({super.key});
@@ -66,7 +67,7 @@ class _ForgotPassScreenState extends State<ForgotPassScreen> {
                         decoration: const InputDecoration(
                             icon: Icon(
                               Icons.email,
-                              size: 50,
+                              size: 36,
                               color: Colors.blue,
                             ),
                             labelText: "Email",
@@ -81,6 +82,11 @@ class _ForgotPassScreenState extends State<ForgotPassScreen> {
                           if (emailController.text.isEmpty) {
                             Fluttertoast.showToast(msg: "Enter email");
                             emailFocusnode.requestFocus();
+                          } else {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: ((context) => OTPScreen())));
                           }
                         },
                       ),

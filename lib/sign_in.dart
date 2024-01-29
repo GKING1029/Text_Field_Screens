@@ -69,7 +69,7 @@ class _SignInScreeenState extends State<SignInScreeen> {
                         decoration: const InputDecoration(
                             icon: Icon(
                               Icons.person_outlined,
-                              size: 50,
+                              size: 36,
                               color: Colors.blue,
                             ),
                             labelText: "Username",
@@ -109,7 +109,7 @@ class _SignInScreeenState extends State<SignInScreeen> {
                             enabled: passwordFocusnode.hasFocus,
                             icon: const Icon(
                               Icons.key_outlined,
-                              size: 50,
+                              size: 36,
                               color: Colors.blue,
                             ),
                             labelText: "Password",

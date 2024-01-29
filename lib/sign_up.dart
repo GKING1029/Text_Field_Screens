@@ -93,7 +93,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         decoration: const InputDecoration(
                             icon: Icon(
                               Icons.person_outlined,
-                              size: 50,
+                              size: 36,
                               color: Colors.blue,
                             ),
                             labelText: "Username",
@@ -123,7 +123,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         decoration: const InputDecoration(
                             icon: Icon(
                               Icons.key_outlined,
-                              size: 50,
+                              size: 36,
                               color: Colors.blue,
                             ),
                             labelText: "Password",
@@ -154,7 +154,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         decoration: const InputDecoration(
                             icon: Icon(
                               Icons.email,
-                              size: 50,
+                              size: 36,
                               color: Colors.blue,
                             ),
                             labelText: "Email",
@@ -188,7 +188,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           decoration: const InputDecoration(
                               icon: Icon(
                                 Icons.phone,
-                                size: 50,
+                                size: 36,
                                 color: Colors.blue,
                               ),
                               labelText: "Phone No.",
