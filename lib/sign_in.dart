@@ -131,8 +131,8 @@ class _SignInScreeenState extends State<SignInScreeen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        TextButton(
-                            onPressed: () {
+                        GestureDetector(
+                            onTap: () {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(

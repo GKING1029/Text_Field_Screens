@@ -56,8 +56,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ),
           Stack(children: [
             Container(
-                height: 500,
-                width: 300,
+                height: MediaQuery.of(context).size.height / 1.291,
+                width: MediaQuery.of(context).size.width / 3,
                 decoration: const BoxDecoration(
                     boxShadow: [
                       BoxShadow(
@@ -87,7 +87,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ],
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(7),
                       child: TextField(
                         controller: usernameController,
                         decoration: const InputDecoration(
@@ -116,7 +116,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(7),
                       child: TextField(
                         enabled: isPasswordEnabled,
                         controller: passwordController,
@@ -147,7 +147,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(7),
                       child: TextField(
                         enabled: isEmailEnabled,
                         controller: emailController,
@@ -177,7 +177,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(7),
                       child: TextField(
                           enabled: isPhoneEnabled,
                           keyboardType: TextInputType.number,
@@ -258,7 +258,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Icon(Icons.circle, color: Colors.blue, size: 70, shadows: [
+                Icon(Icons.circle, color: Colors.blue, size: 38, shadows: [
                   Shadow(
                       color: Colors.grey, blurRadius: 3, offset: Offset(5, 5))
                 ])

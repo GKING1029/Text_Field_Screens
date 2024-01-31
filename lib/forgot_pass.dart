@@ -45,6 +45,7 @@ class _ForgotPassScreenState extends State<ForgotPassScreen> {
                         topRight: Radius.circular(20),
                         bottomRight: Radius.circular(20))),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     const Row(
                       children: [
@@ -54,7 +55,7 @@ class _ForgotPassScreenState extends State<ForgotPassScreen> {
                             "Forgot Password",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 15,
+                                fontSize: 20,
                                 color: Colors.grey),
                           ),
                         ),
