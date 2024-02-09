@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class ListViewScreen extends StatefulWidget {
   const ListViewScreen({super.key});
@@ -17,6 +16,7 @@ class _ListViewScreenState extends State<ListViewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(110, 151, 151, 151),
       body: Column(
         // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -200,7 +200,7 @@ class _ListViewScreenState extends State<ListViewScreen> {
                     decoration: BoxDecoration(
                         color: inverseColor == true
                             ? index % 2 == 0
-                                ? Colors.purple
+                                ? Colors.blueGrey
                                 : color == -1
                                     ? Colors.white
                                     : color == 0
