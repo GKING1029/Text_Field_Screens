@@ -1,14 +1,12 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: avoid_print, camel_case_types
 
+import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:text_field_screens/dialog_screen.dart';
 import 'package:text_field_screens/then_dialog_screen.dart';
 
 class Input_Screen extends StatefulWidget {
   const Input_Screen({super.key});
-  // final String name, password;
-  // const Input_Screen({super.key, required this.name, required this.password});
-
   @override
   State<Input_Screen> createState() => _Input_ScreenState();
 }
@@ -18,19 +16,6 @@ class _Input_ScreenState extends State<Input_Screen> implements OnClick {
   var collegeTextEditingController = TextEditingController();
   var editingTextFocusNode = FocusNode();
   var collegeTextFocusNode = FocusNode();
-
-  // _Input_ScreenState(String name) {
-  //   textEditingController.text = name;
-  // }
-
-  // @override
-  // initState() {
-  //   super.initState();
-  //   print("name ${widget.name} password ${widget.password}");
-  //   collegeTextEditingController.text = widget.password;
-  //   setState(() {});
-  // }
-
   checkValidation() {
     if (textEditingController.text.isEmpty) {
       Fluttertoast.showToast(msg: "Enter Something in Textfield 1");
@@ -38,11 +23,11 @@ class _Input_ScreenState extends State<Input_Screen> implements OnClick {
       Fluttertoast.showToast(msg: "Enter Something in Textfield 2");
     } else {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text("This is snackbar"),
+          content: const Text("This is snackbar"),
           action: SnackBarAction(
               label: "Ok",
               onPressed: () {
-                Fluttertoast.showToast(msg: "This is Flutertoast");
+                Fluttertoast.showToast(msg: "This is FluterToast");
               })));
     }
   }
@@ -50,7 +35,7 @@ class _Input_ScreenState extends State<Input_Screen> implements OnClick {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 86, 217, 250),
+        backgroundColor: const Color.fromARGB(255, 86, 217, 250),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(children: [
@@ -101,7 +86,7 @@ class _Input_ScreenState extends State<Input_Screen> implements OnClick {
                   print(textEditingController.text);
                   checkValidation();
                 },
-                child: Text("Submit"),
+                child: const Text("Submit"),
               ),
             ),
             Padding(
@@ -114,22 +99,23 @@ class _Input_ScreenState extends State<Input_Screen> implements OnClick {
                               onClick: this,
                             ));
                   },
-                  child: Text("Show Dialog")),
+                  child: const Text("Show Dialog")),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: OutlinedButton(
                   onPressed: () {
                     showDialog(
-                        context: context,
-                        builder: (context) => ThenDialogScreen()).then((value) {
+                            context: context,
+                            builder: (context) => const ThenDialogScreen())
+                        .then((value) {
                       if (value != null) {
                         textEditingController.text = value;
                         setState(() {});
                       }
                     });
                   },
-                  child: Text("Show Then Dialog")),
+                  child: const Text("Show Then Dialog")),
             )
           ]),
         ));
