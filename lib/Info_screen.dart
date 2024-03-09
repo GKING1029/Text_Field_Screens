@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:text_field_screens/input_screen.dart';
+import 'package:text_field_screens/otp_screen.dart';
 
 class InfoScreen extends StatefulWidget {
   const InfoScreen({super.key});
@@ -32,7 +32,7 @@ class _InfoScreenState extends State<InfoScreen> {
       Fluttertoast.showToast(msg: "Enter valid address");
     } else {
       Navigator.push(context,
-          MaterialPageRoute(builder: ((context) => const Input_screen())));
+          MaterialPageRoute(builder: ((context) => const OTPScreen())));
     }
   }
 
@@ -156,7 +156,7 @@ class _InfoScreenState extends State<InfoScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: ((context) => const Input_screen())));
+                              builder: ((context) => const OTPScreen())));
                     },
                     child: const Padding(
                       padding: EdgeInsets.all(15),
