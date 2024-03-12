@@ -32,6 +32,9 @@ class _Input_ScreenState extends State<Input_Screen> implements OnClick {
     }
   }
 
+  var textValue = 0;
+  var _currentSliderPrimaryValue = 0.0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,7 +119,74 @@ class _Input_ScreenState extends State<Input_Screen> implements OnClick {
                     });
                   },
                   child: const Text("Show Then Dialog")),
-            )
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: OutlinedButton(
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          return StatefulBuilder(
+                              builder: (context, bottomState) {
+                            return Container(
+                              width: MediaQuery.of(context).size.width,
+                              child: Column(
+                                children: [
+                                  Text(
+                                    "$textValue",
+                                    style: TextStyle(fontSize: 40),
+                                  ),
+                                  ElevatedButton(
+                                      onPressed: () {
+                                        textValue++;
+                                        textEditingController.text =
+                                            textValue.toString();
+
+                                        bottomState(() {});
+                                      },
+                                      child: Text("Increment Value")),
+                                ],
+                              ),
+                            );
+                          });
+                        });
+                  },
+                  child: Text("Show Bottomsheet Dialog")),
+            ),
+            Padding(
+                padding: EdgeInsets.all(4),
+                child: OutlinedButton(
+                    onPressed: () {
+                      showModalBottomSheet(
+                          context: context,
+                          builder: (context) {
+                            return StatefulBuilder(
+                                builder: (context, bottomState) {
+                              return Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  children: [
+                                    Text("Update the progress bar"),
+                                    Slider(
+                                      value: _currentSliderPrimaryValue,
+                                      min: 0,
+                                      max: 1000,
+                                      onChanged: (value) {
+                                        bottomState(() {
+                                          _currentSliderPrimaryValue = value;
+                                          collegeTextEditingController.text =
+                                              value.toString();
+                                        });
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              );
+                            });
+                          });
+                    },
+                    child: Text("Show Modal Bottomsheet")))
           ]),
         ));
   }
